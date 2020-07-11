@@ -13,12 +13,9 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v1.0.0
-
-    - name: Capture Screenshot
+    - name: Capture Screensshot
       id: screenshot
-      uses: ./
+      uses: swinton/screenshot-website@v1.x
       with:
         source: https://github.com/swinton/screenshot-website
         destination: screenshot.png
