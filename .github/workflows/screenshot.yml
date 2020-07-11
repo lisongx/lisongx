@@ -25,10 +25,6 @@ jobs:
     needs: screenshot
     runs-on: ubuntu-latest
     steps:
-    - name: Download screenshots
-      uses: actions/download-artifact@v1
-      with:
-        name: screenshot
     - name: Check out repo
       uses: actions/checkout@v2
     - name: Set up Python
@@ -45,8 +41,14 @@ jobs:
     - name: Install Python dependencies
       run: |
         python -m pip install -r requirements.txt
+    - name: Download screenshots
+      uses: actions/download-artifact@v2
+      with:
+        name: screenshot
+    - name: Display structure of downloaded files
+      run: ls -R
     - name: Update README
-      env:
+        env:
         IMGUR_CLIENT_IDD: ${{ secrets.IMGUR_CLIENT_IDD }}
       run: |-
         python build_readme.py
