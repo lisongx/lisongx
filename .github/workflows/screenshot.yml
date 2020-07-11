@@ -20,7 +20,6 @@ jobs:
         source: https://github.com/lisongx/
         destination: screenshot.png
         full-page: true
-        width: ${{ matrix.width }}
 
   build:
     needs: screenshot
@@ -34,7 +33,7 @@ jobs:
     - name: Print the final result
       shell: bash
       run: |
-        value=`ls -l screenshot.png`
+        value=`ls -l screenshot`
         echo The result is $value
     # - name: Check out repo
     #   uses: actions/checkout@v2
