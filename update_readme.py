@@ -14,7 +14,8 @@ IMGUR_API = "https://api.imgur.com/3/image"
 
 def upload_image():
     headers = {"Authorization": "Client-ID %s" % os.getenv('IMGUR_CLIENT_ID')}
-    with open('screenshot.png', 'rb') as f:
+    filepath = os.getenv('GITHUB_WORKSPACE') + '/screenshot.png'
+    with open(filepath, 'rb') as f:
         img_content = f.read()
         response = requests.post(
             IMGUR_API,

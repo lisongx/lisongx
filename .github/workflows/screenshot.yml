@@ -44,10 +44,10 @@ jobs:
     - name: Install Python dependencies
       run: |
         python -m pip install -r requirements.txt
-    - name: Download screenshots
-      uses: actions/download-artifact@v2
-      with:
-        name: screenshot
+    # - name: Download screenshots
+    #   uses: actions/download-artifact@v2
+    #   with:
+    #     name: screenshot
     - name: Display structure of downloaded files
       run: ls -R
     - name: Update README
