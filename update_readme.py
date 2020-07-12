@@ -15,6 +15,7 @@ def upload_image():
     headers = {"Authorization": "Client-ID %s" % os.getenv('IMGUR_CLIENT_ID')}
     with open('screenshot.png', 'rb') as f:
         img_content = f.read()
+        print('image content', len(img_content))
         response = requests.post(
             IMGUR_API,
             headers = headers,
@@ -25,7 +26,9 @@ def upload_image():
                 'title': 'Picture'
             }
         )
-    return response.json()['data']['link']
+        data = response.json()
+        print('response data', data)
+        return data['data']['link']
 
 
 if __name__ == "__main__":
