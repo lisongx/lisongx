@@ -36,7 +36,7 @@ if __name__ == "__main__":
     readme = root / "README.md"
     image_url = upload_image()
     content = "\n\n".join([
-        "# I'm sitting on my Github profile",
+        "# Hi teere, this is my Github profile",
         '<img src="{gif}" width="100%" />'.format(gif=GIF),
         "![I'm sitting on my Github profile]({image_url})".format(image_url=image_url),
     ])
