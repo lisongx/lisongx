@@ -21,7 +21,7 @@ def upload_image():
         os.system(['ls -R', os.getenv('GITHUB_WORKSPACE')])
     )
 
-    filepath = os.getenv('GITHUB_WORKSPACE') + '/screenshot.png'
+    filepath = os.getenv('GITHUB_WORKSPACE') + 'screenshots/screenshot.png'
     with open(filepath, 'rb') as f:
         img_content = f.read()
         response = requests.post(
