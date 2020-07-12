@@ -20,9 +20,7 @@ jobs:
       uses: swinton/screenshot-website@v1.x
       with:
         source: https://github.com/lisongx/
-        type: jpg
-        destination: screenshot.jpg
-        full-page: true
+        destination: screenshot.png
 
   build:
     needs: screenshot
