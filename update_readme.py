@@ -14,13 +14,6 @@ IMGUR_API = "https://api.imgur.com/3/image"
 
 def upload_image():
     headers = {"Authorization": "Client-ID %s" % os.getenv('IMGUR_CLIENT_ID')}
-    print(
-        os.system('ls -R /home/runner/work/lisongx/')
-    )
-    print(
-        os.system(['ls -R', os.getenv('GITHUB_WORKSPACE')])
-    )
-
     filepath = os.getenv('GITHUB_WORKSPACE') + 'screenshots/screenshot.png'
     with open(filepath, 'rb') as f:
         img_content = f.read()
