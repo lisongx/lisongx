@@ -13,7 +13,7 @@ jobs:
       matrix:
         os: [macos-latest]
         height: [960]
-    runs-on:
+    runs-on: ${{ matrix.os }}
 
     steps:
     - name: Capture Screensshot
