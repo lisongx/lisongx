@@ -41,7 +41,7 @@ jobs:
       with:
         url: https://github.com/lisongx/
         width: 1280
-        height: 700
+        fullPage: true
         screenshotName: screenshot
     - name: Display structure of downloaded files
       run: ls -R $GITHUB_WORKSPACE/screenshots

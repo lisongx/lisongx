@@ -35,7 +35,9 @@ def upload_image():
 if __name__ == "__main__":
     readme = root / "README.md"
     image_url = upload_image()
-    content = "# I'm sitting on my Github profile\n![I'm sitting on my Github profile]({image_url})\n![gif]({gif})\n".format(
-        gif=GIF, image_url=image_url
-    )
+    content = "\n".join([
+        "# I'm sitting on my Github profile",
+        "![gif]({gif})".format(gif=GIF),
+        "![I'm sitting on my Github profile]({image_url})".foramt(image_url=image_url),
+    ])
     readme.open("w").write(content)
