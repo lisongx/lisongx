@@ -12,9 +12,8 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest]
-        width: [1200]
         height: [960]
-    runs-on: ${{ matrix.os }}
+    runs-on:
 
     steps:
     - name: Capture Screensshot
@@ -23,7 +22,7 @@ jobs:
       with:
         source: https://github.com/lisongx/
         destination: screenshot.png
-        full-page: true
+        height: ${{ matrix.width }}
 
   build:
     needs: screenshot
