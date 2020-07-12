@@ -13,6 +13,7 @@ jobs:
       matrix:
         os: [macos-latest]
         width: [1200]
+        height: [960]
     runs-on: ${{ matrix.os }}
 
     steps:
