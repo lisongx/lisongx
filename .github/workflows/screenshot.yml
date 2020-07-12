@@ -41,8 +41,8 @@ jobs:
       with:
         url: https://github.com/lisongx/
         width: 1280
-        fullPage: true
         screenshotName: screenshot
+        fullPage: true
     - name: Display structure of downloaded files
       run: ls -R $GITHUB_WORKSPACE/screenshots
     - name: Update README
