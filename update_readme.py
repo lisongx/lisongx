@@ -38,6 +38,6 @@ if __name__ == "__main__":
     content = "\n".join([
         "# I'm sitting on my Github profile",
         "![gif]({gif})".format(gif=GIF),
-        "![I'm sitting on my Github profile]({image_url})".foramt(image_url=image_url),
+        "![I'm sitting on my Github profile]({image_url})".format(image_url=image_url),
     ])
     readme.open("w").write(content)
