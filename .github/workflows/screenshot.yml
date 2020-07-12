@@ -48,7 +48,7 @@ jobs:
     - name: Display structure of downloaded files
       run: ls -R
     - name: Update README
-        env:
+      env:
         IMGUR_CLIENT_IDD: ${{ secrets.IMGUR_CLIENT_IDD }}
       run: |-
         python build_readme.py
