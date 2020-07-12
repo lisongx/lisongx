@@ -1,4 +1,4 @@
-name: Tests
+name: My build
 
 on:
   push
@@ -51,9 +51,9 @@ jobs:
       env:
         IMGUR_CLIENT_IDD: ${{ secrets.IMGUR_CLIENT_IDD }}
       run: |-
-        python build_readme.py
+        python update_readme.py
         cat README.md
-    - name: Commit and push if changed
+    - name: Commit and push
       run: |-
         git diff
         git config --global user.email "readme-bot@example.com"
