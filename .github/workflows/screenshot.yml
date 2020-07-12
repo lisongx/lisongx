@@ -3,8 +3,8 @@ name: My build
 on:
   push:
   workflow_dispatch:
-  # schedule:
-  #   - cron:  '*/20 * * * *'
+  schedule:
+    - cron:  '*/30 * * * *'
 
 jobs:
   screenshot:
@@ -38,7 +38,7 @@ jobs:
         url: https://github.com/lisongx/
         width: 1280
         screenshotName: screenshot
-        height: 2000
+        fullPage: true
     - name: Display structure of downloaded files
       run: ls -R $GITHUB_WORKSPACE/screenshots
     - name: Update README
