@@ -13,7 +13,7 @@ IMGUR_API = "https://api.imgur.com/3/image"
 
 def upload_image():
     headers = {"Authorization": "Client-ID %s" % os.getenv('IMGUR_CLIENT_ID')}
-    with open('screenshot/screenshot.png', 'rb') as f:
+    with open('screenshot.png', 'rb') as f:
         img_content = f.read()
         response = requests.post(
             IMGUR_API,
