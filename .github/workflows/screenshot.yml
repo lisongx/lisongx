@@ -17,11 +17,11 @@ jobs:
     steps:
     - name: Capture Screensshot
       id: screenshot
-      uses: swinton/screenshot-website@v1.x
+      uses: swinton/screenshot-website@v1.
       with:
         source: https://github.com/lisongx/
-        destination: screenshot.png
-        height: 800
+        type: jpg
+        destination: screenshot.jpg
         full-page: true
 
   build:

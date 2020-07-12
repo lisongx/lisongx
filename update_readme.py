@@ -14,7 +14,7 @@ IMGUR_API = "https://api.imgur.com/3/image"
 
 def upload_image():
     headers = {"Authorization": "Client-ID %s" % os.getenv('IMGUR_CLIENT_ID')}
-    with open('screenshot.png', 'rb') as f:
+    with open('screenshot.jpg', 'rb') as f:
         img_content = f.read()
         response = requests.post(
             IMGUR_API,
@@ -22,7 +22,7 @@ def upload_image():
             data = {
                 'image': b64encode(img_content),
                 'type': 'base64',
-                'name': 'screenshot-%s.png' % datetime.datetime.now(),
+                'name': 'screenshot-%s.jpg' % datetime.datetime.now(),
                 'title': 'Picture'
             }
         )
