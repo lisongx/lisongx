@@ -49,7 +49,7 @@ jobs:
       run: ls -R
     - name: Update README
       env:
-        IMGUR_CLIENT_IDD: ${{ secrets.IMGUR_CLIENT_IDD }}
+        IMGUR_CLIENT_ID: ${{ secrets.IMGUR_CLIENT_ID }}
       run: |-
         python update_readme.py
         cat README.md
