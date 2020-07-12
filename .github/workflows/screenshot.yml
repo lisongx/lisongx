@@ -1,7 +1,10 @@
 name: My build
 
 on:
-  push
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron:  '*/30 * * * *'
 
 jobs:
   screenshot:
@@ -10,6 +13,7 @@ jobs:
       matrix:
         os: [macos-latest]
         width: [1200]
+        height: [500]
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -19,7 +23,6 @@ jobs:
       with:
         source: https://github.com/lisongx/
         destination: screenshot.png
-        full-page: true
 
   build:
     needs: screenshot
