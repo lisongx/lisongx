@@ -21,7 +21,7 @@ jobs:
       with:
         source: https://github.com/lisongx/
         destination: screenshot.png
-        hideElements: ['signup-prompt', 'header']
+        hideElements: signup-prompt
 
   build:
     needs: screenshot
