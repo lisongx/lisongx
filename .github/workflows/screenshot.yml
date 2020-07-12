@@ -15,17 +15,6 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-    - name: Capture Screensshot
-      id: screenshot
-      uses: lannonbr/puppeteer-screenshot-action@1.3.0
-      with:
-        url: https://github.com/lisongx/
-        width: 1280
-        height: 700
-    - name: Display structure of downloaded files
-      run: ls -R $GITHUB_WORKSPACE
-    - name: Display structure of downloaded files
-      run: ls -R $GITHUB_WORKSPACE/screenshots
     - name: Check out repo
       uses: actions/checkout@v2
     - name: Set up Python
@@ -46,6 +35,14 @@ jobs:
     #   uses: actions/download-artifact@v2
     #   with:
     #     name: screenshot
+    - name: Capture Screensshot
+      id: screenshot
+      uses: lannonbr/puppeteer-screenshot-action@1.3.0
+      with:
+        url: https://github.com/lisongx/
+        width: 1280
+        height: 700
+        screenshotName: screenshot
     - name: Display structure of downloaded files
       run: ls -R $GITHUB_WORKSPACE/screenshots
     - name: Update README
