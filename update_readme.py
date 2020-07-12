@@ -37,7 +37,7 @@ if __name__ == "__main__":
     image_url = upload_image()
     content = "\n".join([
         "# I'm sitting on my Github profile",
-        "![gif]({gif})".format(gif=GIF),
+        '<img src="{gif}" width="100%" />'.format(gif=GIF),
         "![I'm sitting on my Github profile]({image_url})".format(image_url=image_url),
     ])
     readme.open("w").write(content)
