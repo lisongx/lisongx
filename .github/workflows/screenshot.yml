@@ -17,12 +17,12 @@ jobs:
     steps:
     - name: Capture Screensshot
       id: screenshot
-      uses: lisongx/screenshot-website@v1.x
+      uses: lisongx/screenshot-website@v1.1.0
       with:
         source: https://github.com/lisongx/
         destination: screenshot.png
         height: 600
-        hide-elements: signup-prompt,header
+        hide-elements: signup-prompt
 
   build:
     needs: screenshot
