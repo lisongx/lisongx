@@ -8,6 +8,7 @@ from base64 import b64encode
 
 root = pathlib.Path(__file__).parent.resolve()
 
+GIF = "https://66.media.tumblr.com/9928d0e510741aed0863efeca4fce19b/tumblr_ndsqgsv7331tk1vn4o1_400.gifv"
 IMGUR_API = "https://api.imgur.com/3/image"
 
 
@@ -35,7 +36,7 @@ if __name__ == "__main__":
     image_url = upload_image()
     content = """
         #I'm sitting on my Github profile
-        <img src="https://66.media.tumblr.com/9928d0e510741aed0863efeca4fce19b/tumblr_ndsqgsv7331tk1vn4o1_400.gifv" width="100%" />
-        ![I'm sitting on my Github profile](%s)"
-    """ % image_url
+        <img src="{gif}" width="100%" />
+        ![I'm sitting on my Github profile]({image_url})"
+    """.format(gif=GIF, image_url=image_url)
     readme.open("w").write(content)
