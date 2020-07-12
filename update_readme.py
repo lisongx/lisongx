@@ -15,7 +15,6 @@ def upload_image():
     headers = {"Authorization": "Client-ID %s" % os.getenv('IMGUR_CLIENT_ID')}
     with open('screenshot.png', 'rb') as f:
         img_content = f.read()
-        print('image content', len(img_content))
         response = requests.post(
             IMGUR_API,
             headers = headers,
