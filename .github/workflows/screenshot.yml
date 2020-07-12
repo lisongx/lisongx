@@ -23,6 +23,10 @@ jobs:
         screenshot-name: screenshot
         width: 1280
         height: 700
+    - name: Display structure of downloaded files
+      run: ls -R $GITHUB_WORKSPACE
+    - name: Display structure of downloaded files
+      run: ls -R $GITHUB_WORKSPACE/screenshots
     - name: Check out repo
       uses: actions/checkout@v2
     - name: Set up Python
