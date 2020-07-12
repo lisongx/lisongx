@@ -12,8 +12,6 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest]
-        width: [1280]
-        height: [960]
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -23,8 +21,8 @@ jobs:
       with:
         source: https://github.com/lisongx/
         destination: screenshot.png
-        width: ${{ matrix.width }}
-        height: ${{ matrix.height }}
+        height: 800
+        full-page: true
 
   build:
     needs: screenshot
